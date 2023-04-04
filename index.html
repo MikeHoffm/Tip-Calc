@@ -5,22 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <title>Tip Calculator</title>
 </head>
 <body>
-    <header>Tip Calculator, Welcome</header>
+    <header>
+        <h2>The Ultimate Tip Calculator</h2>
+    </header>
     <main>
         <form id="form" action="tip-form" method="post">
             <label for="bill">Bill Total:</label>
-            <input type="number" id="bill" name="bill" placeholder="50.00">
+            <input type="number" id="bill" name="bill" placeholder="$">
             
-            <label for="percentage">Tip Percentage</label>
-            <input type="number" id="percentage" name="percentage" placeholder="18%">
-            
+            <label for="percents">Tip %</label>
+            <select id="percents" name="percents">
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+                <option value="18">18%</option>
+                <option value="20">20%</option>
+            </select>
+
             <button class="submit" type="submit">Calculate Tip</button>
         </form>
+
+        <div class="totals">
+            <h2>Tip:</h2>
+            <h2 class="tip"></h3>
+            <h2>Total:</h32>
+            <h2 class="total"></h3>
+        </div>
     </main>
-    <footer></footer>
+    <footer>
+        <a target="_blank" href="https://github.com/MikeHoffm">MikeDev</a>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

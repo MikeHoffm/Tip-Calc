@@ -6,17 +6,20 @@ formSubmit.addEventListener('click', () => {
 });
 
 const billTotal = document.getElementById('bill');
-const tipPercent = document.getElementById('percentage');
+const tipPercent = document.getElementById('percents');
+
+const tipDOM = document.querySelector('.tip');
+const totalDOm = document.querySelector('.total');
 
 function calcTip(bill, tip) {
-// billTotal * (1 + tipPercentage) as a decimal
-// ex for 20%: billTotal * (1 + .20) will give the Total of bill + tip
   percentToDecimal = parseFloat(tip) / 100;
-  const billTipIncluded = bill * (1 + percentToDecimal);
-  console.log(billTipIncluded);
-  return billTipIncluded;
-  // take value from above, subtract amount of bill to get the tip amount
-}
+  let billTipIncluded = bill * (1 + percentToDecimal);
+  billTipIncluded = billTipIncluded.toFixed(2);
 
-// when submit is pressed, call calcTip(billTotal, tipPercentage)
-// update DOM to show the Total with tip included, and the tip
+  const tipAlone = (billTipIncluded - bill).toFixed(2);
+  console.log(billTipIncluded);
+
+  tipDOM.innerText = (`$${tipAlone}`);
+  totalDOm.innerText = (`$${billTipIncluded}`);
+  return billTipIncluded;
+}
